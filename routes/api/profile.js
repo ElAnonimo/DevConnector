@@ -36,7 +36,7 @@ router.get('/all', (req, res) => {
 		.populate('user', ['name', 'userpic'])
 		.then((profiles) => {
 			if (!profiles) {
-				errors.noprofile = 'There are no profiles in the DB';
+				errors.noprofile = 'There are no user profiles in the DB';
 				return res.status(404).json(errors);
 			}
 
