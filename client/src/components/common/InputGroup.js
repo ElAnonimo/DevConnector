@@ -8,7 +8,9 @@ const InputGroup = ({ name, placeholder, value, error, icon, type, onChange }) =
 			<div className="input-group-prepend">
 				<span className="input-group-text"><i className={icon} /></span>
 			</div>
-			<input type={type} name={name}
+			<input
+        type={type}
+        name={name}
 				value={value}
 				onChange={onChange}
 				className={classnames("form-control form-control-lg", { 'is-invalid': error })}

@@ -11,11 +11,14 @@ const SelectListGroup = ({ name, value, error, info, onChange, options }) => {
 
 	return(
 		<div className="form-group">
-			<select name={name}
+			<select
+        name={name}
 				value={value}
 				onChange={onChange}
 				className={classnames("form-control form-control-lg", { 'is-invalid': error })}
-			>{selectOptions}</select>
+			>
+        {selectOptions}
+      </select>
 			{ info && <small className="form-text text-muted">{info}</small> }
 			{ error && <div className="invalid-feedback">{error}</div> }
 		</div>

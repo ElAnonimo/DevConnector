@@ -112,9 +112,9 @@ class AddEducation extends Component {
 								/>
 								<div className="form-check mb-4">
 									<input type="checkbox" name="current" id='current' className="form-check-input"
-												 value={this.state.current}
-												 checked={this.state.current}
-												 onChange={this.onCheck}
+                    value={this.state.current}
+                    checked={this.state.current}
+                    onChange={this.onCheck}
 									/>
 									<label htmlFor="current" className="form-check-label">Current education</label>
 								</div>

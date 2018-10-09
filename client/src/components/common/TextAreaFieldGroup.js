@@ -5,7 +5,8 @@ import PropTypes from 'prop-types';
 const TextAreaFieldGroup = ({ name, placeholder, value, error, info, onChange }) => {
 	return(
 		<div className="form-group">
-			<textarea name={name}
+			<textarea
+        name={name}
 				value={value}
 				onChange={onChange}
 				className={classnames("form-control form-control-lg", { 'is-invalid': error })}

@@ -5,7 +5,9 @@ import PropTypes from 'prop-types';
 const TextFieldGroup = ({ name, placeholder, value, error, info, type, onChange, disabled }) => {
 	return(
 		<div className="form-group">
-			<input type={type} name={name}
+			<input
+        type={type}
+        name={name}
 				value={value}
 				onChange={onChange}
 				disabled={disabled}
