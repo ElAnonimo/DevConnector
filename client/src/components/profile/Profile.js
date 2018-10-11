@@ -20,6 +20,10 @@ class Profile extends Component {
 		if (nextProps.profile.profile === null && nextProps.profile.loading) {
 			this.props.history.push('/notfound');
 		}
+    
+    if (!nextProps.profile.user) {
+      this.props.history.push('/');
+    }
 	}
 
 	render() {
