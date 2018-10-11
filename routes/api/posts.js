@@ -151,11 +151,11 @@ router.delete('/comment/:id/:comment_id', passport.authenticate('jwt', { session
 				return res.status(401).json({ notauthorized: 'User is not the owner of this comment' });
 			}
 
-			post.comment.splice(removeIndex, 1);
+			post.comments.splice(removeIndex, 1);
 
 			post.save().then((post) => res.json(post));
 		})
-		.catch((err) => res.status(404).json({ postnotfound: 'No post found' }));
+		.catch((err) => res.status(404).json({ 'post not found': 'post not found' }));
 });
 
 module.exports = router;
