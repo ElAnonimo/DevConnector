@@ -21,7 +21,7 @@ mongoose.connect(keys.mongoURI)
 // use passport middleware
 app.use(passport.initialize());
 
-// passport config
+// set passport to use passport-jwt strategy
 require('./config/passport')(passport);
 
 // use these routes when in development. In production there are no routes only the built app in client/build

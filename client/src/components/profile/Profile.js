@@ -22,7 +22,7 @@ class Profile extends Component {
 		}
     
     if (!nextProps.profile.user) {
-      this.props.history.push('/');
+      this.props.history.push('/login');
     }
 	}
 

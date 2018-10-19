@@ -66,7 +66,7 @@ class App extends Component {
 								<PrivateRoute exact path='/post/:id' component={Post} />
 							</Switch>
 							<Route path='/profiles' component={Profiles} />
-							<Route path='/profile/:handle' component={Profile} />
+							<Route path='/profile/:handle' component={Profile} />   {/* see line 24 in Profile.js */}
 							<Route exact path='/notfound' component={NotFound} />
 						</div>
 						<Footer />

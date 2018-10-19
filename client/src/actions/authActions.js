@@ -26,7 +26,7 @@ export const loginUser = (userData) => (dispatch) => {
 		.then((res) => {
 			// save token to localStorage
 			const { token } = res.data;
-			localStorage.setItem('userJwt', token);			// token is a String no need to token.stringify()
+			localStorage.setItem('userJwt', token);			// token is a String no need for token.stringify()
 			// set token to browser Authorization header
 			setAuthToken(token);
 			// decode token to get user data

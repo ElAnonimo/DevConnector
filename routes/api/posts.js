@@ -138,7 +138,7 @@ router.delete('/comment/:id/:comment_id', passport.authenticate('jwt', { session
 		.then((post) => {
 			// check if comment exists
 			if (post.comments.filter((comment) => comment._id.toString() === req.params.comment_id).length === 0) {
-				return res.status(404).json({ commentnotexist: 'This comment was not found' });
+				return res.status(404).json({ 'comment not exist': 'This comment was not found' });
 			}
 
 			// get comment remove index
@@ -148,7 +148,7 @@ router.delete('/comment/:id/:comment_id', passport.authenticate('jwt', { session
 
 			// make sure only the comment owner can delete comment
 			if (post.comments[removeIndex].user.toString() !== req.user.id) {
-				return res.status(401).json({ notauthorized: 'User is not the owner of this comment' });
+				return res.status(401).json({ 'not authorized': 'User is not the owner of this comment' });
 			}
 
 			post.comments.splice(removeIndex, 1);
