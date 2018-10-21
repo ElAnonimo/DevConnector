@@ -21,7 +21,7 @@ class Profile extends Component {
 			this.props.history.push('/notfound');
 		}
     
-    if (!nextProps.profile.user) {
+    if (!nextProps.profile.profile) {
       this.props.history.push('/login');
     }
 	}

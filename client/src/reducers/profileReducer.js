@@ -1,8 +1,8 @@
 import { GET_PROFILE, GET_PROFILES, PROFILE_LOADING, CLEAR_CURRENT_PROFILE } from '../actions/types';
 
 const initialState = {
-	profile: {},
-	profiles: [],
+	profile: null,
+	profiles: null,
 	loading: false
 };
 
@@ -28,7 +28,7 @@ export default function(state = initialState, action) {
 		case CLEAR_CURRENT_PROFILE:
 			return {
 				...state,
-				profile: {}
+				profile: null
 			};
 		default:
 			return state;
