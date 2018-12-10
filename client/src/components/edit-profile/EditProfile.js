@@ -84,7 +84,7 @@ class EditProfile extends Component {
 	onSubmit(evt) {
 		evt.preventDefault();
 
-		const profileDate = {
+		const profileData = {
 			handle: this.state.handle,
 			company: this.state.company,
 			website: this.state.website,
@@ -100,7 +100,7 @@ class EditProfile extends Component {
 			instagram: this.state.instagram
 		};
 
-		this.props.createProfile(profileDate, this.props.history);
+		this.props.createProfile(profileData, this.props.history);
 	}
 
 	onChange(evt) {
