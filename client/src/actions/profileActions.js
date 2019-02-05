@@ -112,7 +112,7 @@ export const deleteAccount = () => (dispatch) => {
 	}
 };
 
-// profile loading
+// set profile loading
 export const setProfileLoading = () => {
 	return {
 		type: PROFILE_LOADING

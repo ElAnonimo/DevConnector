@@ -10,7 +10,7 @@ import CommentFeed from './CommentFeed';
 
 class Post extends Component {
 	componentDidMount() {
-		console.log(this.props);
+		// console.log(this.props);
 		this.props.getPost(this.props.computedMatch.params.id);
 	}
 

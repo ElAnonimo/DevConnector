@@ -24,7 +24,7 @@ export const getPosts = () => (dispatch) => {
 			payload: res.data
 		}))
 		.catch((err) => dispatch({
-			// not GET_ERRORS because getPosts() isn't used with a form to send errors to unlike addPosts()
+			// not GET_ERRORS because getPosts() isn't used with a form to send errors to unlike addPost()
 			type: GET_POSTS,
 			// couldn't fetch posts, there are none to send, send {}
 			payload: {}

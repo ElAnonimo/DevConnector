@@ -16,7 +16,7 @@ const UserSchema = new Schema({
 		required: true
 	},
 	userpic: {
-		type: String 			// gets inserted in users.js. required would throw an error
+		type: String 			// is added in users.js not here. `required: true` would cause an error
 	},
 	date: {
 		type: Date,
