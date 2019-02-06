@@ -8,18 +8,8 @@ import { withRouter } from 'react-router-dom';
 class CreateProfile extends Component {
 	constructor(props) {
 		super(props);
-		
-		this.state = {
-			errors: {}
-		};
 
 		this.onSubmit = this.onSubmit.bind(this);
-	}
-
-	componentWillReceiveProps(nextProps) {
-		if (nextProps.errors) {
-			this.setState({ errors: nextProps.errors });
-		}
 	}
 
 	onSubmit(profileData) {

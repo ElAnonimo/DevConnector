@@ -8,11 +8,6 @@ import { createProfile, getCurrentProfile } from '../../actions/profileActions';
 class EditProfile extends Component {
 	constructor(props) {
 		super(props);
-		
-		this.state = {
-			profile: {},
-			errors: {}
-		};
 
 		this.onSubmit = this.onSubmit.bind(this);
 	}
@@ -21,7 +16,6 @@ class EditProfile extends Component {
 		this.props.getCurrentProfile();
 	}
 
-	// onSubmit(evt) {
 	onSubmit(profileData) {
 		this.props.createProfile(profileData, this.props.history);
 	}
