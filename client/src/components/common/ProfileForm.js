@@ -33,7 +33,7 @@ class ProfileForm extends Component {
 		this.onSubmit = this.onSubmit.bind(this);
 	}
 	
-	componentWillReceiveProps(nextProps) {
+	/* componentWillReceiveProps(nextProps) {
 		if (nextProps.errors) {
 			this.setState({ errors: nextProps.errors });
 		}
@@ -74,7 +74,60 @@ class ProfileForm extends Component {
 				instagram: profile.instagram
 			});
 		}
-	}
+	} */
+	
+	static getDerivedStateFromProps(nextProps) {
+		let errors = {};
+		let profileData = {};
+		
+		if (nextProps.errors) {
+			errors = nextProps.errors;
+		} else if (Object.keys(nextProps.errors).length === 0) {
+			errors = {};
+		}
+
+		if (nextProps.profile.profile) {
+			const profile = nextProps.profile.profile;
+
+			// bring skills array back to csv
+			const skillsCsv = profile.skills.join(',');
+
+			// if a profile field wasn't provided set it to an empty string
+			profile.company = !isEmpty(profile.company) ? profile.company : '';
+			profile.website = !isEmpty(profile.website) ? profile.website : '';
+			profile.location = !isEmpty(profile.location) ? profile.location : '';
+			profile.githubusername = !isEmpty(profile.githubusername) ? profile.githubusername : '';
+			profile.bio = !isEmpty(profile.bio) ? profile.bio : '';
+			profile.social = !isEmpty(profile.social) ? profile.social : {};
+			profile.twitter = !isEmpty(profile.social.twitter) ? profile.social.twitter : '';
+			profile.facebook = !isEmpty(profile.social.facebook) ? profile.social.facebook : '';
+			profile.linkedin = !isEmpty(profile.social.linkedin) ? profile.social.linkedin : '';
+			profile.youtube = !isEmpty(profile.social.youtube) ? profile.social.youtube : '';
+			profile.instagram = !isEmpty(profile.social.instagram) ? profile.social.instagram : '';
+
+			// set component state
+			profileData = {
+				handle: profile.handle,
+				company: profile.company,
+				website: profile.website,
+				location: profile.location,
+				status: profile.status,
+				skills: skillsCsv,
+				githubusername: profile.githubusername,
+				bio: profile.bio,
+				twitter: profile.twitter,
+				facebook: profile.facebook,
+				linkedin: profile.linkedin,
+				youtube: profile.youtube,
+				instagram: profile.instagram
+			};
+		}
+		
+		return {
+			...errors,
+			...profileData
+		};
+  }
 	
 	onChange(evt) {
 		this.setState({ [evt.target.name]: evt.target.value });
