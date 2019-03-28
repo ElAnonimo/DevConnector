@@ -56,7 +56,9 @@ class PostForm extends Component {
 					<div className="card-body">
 						<form onSubmit={this.onSubmit}>
 							<div className="form-group">
-								<TextAreaFieldGroup name='text' placeholder="Create a post"
+								<TextAreaFieldGroup
+									name="text"
+									placeholder="Create a post"
 									value={this.state.text}
 									onChange={this.onChange}
 									error={errors.text}

@@ -55,7 +55,9 @@ class CommentForm extends Component {
 					<div className="card-body">
 						<form onSubmit={this.onSubmit}>
 							<div className="form-group">
-								<TextAreaFieldGroup name='text' placeholder="Reply to post"
+								<TextAreaFieldGroup
+									name='text'
+									placeholder="Reply to post"
 									value={this.state.text}
 									onChange={this.onChange}
 									error={errors.text}
